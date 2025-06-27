@@ -49,11 +49,8 @@ export default function PayAsYouGoPage() {
       <div className="bg-white rounded-lg shadow-sm border p-4 mb-6">
         <div className="flex items-center gap-4 mb-2">
           <Label htmlFor="sample-text" className="text-sm font-medium">
-            Sample Amount:
+            Sample Number of API Requests:
           </Label>
-          <span className="text-sm text-gray-600 bg-gray-100 px-2 py-1 rounded">
-            {apiRequests} API requests
-          </span>
         </div>
         <Input
           type="number"
