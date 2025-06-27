@@ -12,6 +12,7 @@ import {
   TabsTrigger,
 } from "@/components/ui/tabs";
 import { getCurrentUsage } from "@/lib/utils";
+import { EXTERNAL_SUBSCRIPTION_ID } from "@/lib/constants";
 
 export default function PerSeatPage() {
   const [isLoading, setIsLoading] = useState(false);
@@ -27,7 +28,8 @@ export default function PerSeatPage() {
           method: 'POST',
           body: JSON.stringify({
             seat_id: seatId,
-            operation_type: type
+            operation_type: type,
+            external_subscription_id: EXTERNAL_SUBSCRIPTION_ID, // TODO: Replace with your own customer's subscription ID
           }),
       });
       const data = await response.json();

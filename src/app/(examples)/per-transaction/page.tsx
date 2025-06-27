@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { getCurrentUsage } from "@/lib/utils";
+import { EXTERNAL_SUBSCRIPTION_ID } from "@/lib/constants";
 
 export default function PerTransactionPage() {
   const [isLoading, setIsLoading] = useState(false);
@@ -19,7 +20,10 @@ export default function PerTransactionPage() {
     try {
       const response = await fetch('/api/txn-usage', {
           method: 'POST',
-          body: JSON.stringify({ amount }),
+          body: JSON.stringify({
+            amount,
+            external_subscription_id: EXTERNAL_SUBSCRIPTION_ID, // TODO: Replace with your own customer's subscription ID
+          }),
       });
       const data = await response.json();
       setEvent(data);

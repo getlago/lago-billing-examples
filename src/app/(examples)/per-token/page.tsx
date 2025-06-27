@@ -11,6 +11,7 @@ import {
   TabsTrigger,
 } from "@/components/ui/tabs";
 import { getCurrentUsage } from "@/lib/utils";
+import { EXTERNAL_SUBSCRIPTION_ID } from "@/lib/constants";
 
 // Simple token counting function (approximation based on GPT-style tokenization)
 const countTokens = (text: string): number => {
@@ -37,7 +38,8 @@ export default function PerTokenPage() {
           method: 'POST',
           body: JSON.stringify({ 
             type: type,
-            tokens: tokens
+            tokens: tokens,
+            external_subscription_id: EXTERNAL_SUBSCRIPTION_ID, // TODO: Replace with your own customer's subscription ID
           }),
       });
       const data = await response.json();
