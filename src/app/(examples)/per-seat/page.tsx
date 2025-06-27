@@ -56,12 +56,6 @@ export default function PerSeatPage() {
       <div className="grid w-full max-w-sm items-center gap-3 mb-4">
         <Label htmlFor="seatId">Example Seat ID</Label>
         <Input type="text" value={seatId} onChange={(e) => setSeatId(e.target.value)} />
-      </div>
-
-      <div className="flex flex-row gap-3 mb-4">
-        <Button onClick={handleClick} disabled={isLoading}>
-          {isLoading ? <Loader className="animate-spin" /> : 'Send event'}
-        </Button>
         <div className="flex flex-row items-center gap-1">
           <p>Operation type:</p>
           <Tabs defaultValue={type} onValueChange={(value: string) => setType(value)}>
@@ -71,6 +65,12 @@ export default function PerSeatPage() {
             </TabsList>
           </Tabs>
         </div>
+      </div>
+
+      <div className="flex flex-row gap-3 mb-4">
+        <Button onClick={handleClick} disabled={isLoading}>
+          {isLoading ? <Loader className="animate-spin" /> : 'Send event'}
+        </Button>
       </div>
       
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
