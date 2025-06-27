@@ -18,7 +18,7 @@ export default function PerSeatPage() {
   const [usage, setUsage] = useState<any>(null);
   const [event, setEvent] = useState<any>(null);
   const [type, setType] = useState<string>('add');
-  const [seatId, setSeatId] = useState<string>(crypto.randomUUID());
+  const [seatId, setSeatId] = useState<string>('');
 
   const handleClick = async () => {
     setIsLoading(true);
@@ -40,6 +40,10 @@ export default function PerSeatPage() {
   };
 
   useEffect(() => {
+    setSeatId(crypto.randomUUID());
+  }, []);
+
+  useEffect(() => {
     const fetchUsage = async () => {
       const usage = await getCurrentUsage();
       setUsage(usage);
@@ -55,7 +59,7 @@ export default function PerSeatPage() {
       
       <div className="grid w-full max-w-sm items-center gap-3 mb-4">
         <Label htmlFor="seatId">Example Seat ID</Label>
-        <Input type="text" value={seatId} onChange={(e) => setSeatId(e.target.value)} />
+        <Input type="text" value={seatId || 'Generating...'} onChange={(e) => setSeatId(e.target.value)} />
         <div className="flex flex-row items-center gap-1">
           <p>Operation type:</p>
           <Tabs defaultValue={type} onValueChange={(value: string) => setType(value)}>
