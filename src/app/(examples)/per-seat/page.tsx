@@ -55,7 +55,7 @@ export default function PerSeatPage() {
   }, [event]);
 
   return (
-    <main className="p-6 bg-gray-50 min-h-screen">
+    <main className="p-6">
       <h1 className="text-3xl font-bold text-gray-900 mb-2">Per-seat Billing</h1>
       <p className="text-gray-600 mb-6">This simulates seat-based billing for SaaS applications.</p>
       
