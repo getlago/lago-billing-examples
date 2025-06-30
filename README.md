@@ -14,9 +14,7 @@ Interactive demos showcasing different billing models using [Lago's](https://get
 
 ## 🛠 Prerequisites
 
-- Node.js 18+ 
-- npm/yarn/pnpm
-- Active [Lago](https://getlago.com) account with API access
+Active [Lago](https://getlago.com) account with API access
 
 ## 📦 Installation
 
