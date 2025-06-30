@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -69,27 +68,6 @@ export default function Home() {
             </Card>
           </Link>
         ))}
-      </div>
-
-      {/* Footer */}
-      <div className="text-center border-t pt-8">
-        <div className="flex justify-center gap-8 text-sm text-gray-500">
-          <a
-            href="https://getlago.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 hover:text-gray-700 transition-colors"
-          >
-            <Image
-              aria-hidden
-              src="/globe.svg"
-              alt="Globe icon"
-              width={16}
-              height={16}
-            />
-            Visit Lago
-          </a>
-        </div>
       </div>
     </div>
   );
