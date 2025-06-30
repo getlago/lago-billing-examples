@@ -7,11 +7,9 @@ export default function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo/Brand */}
-          <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">L</span>
-            </div>
-            <span className="font-semibold text-gray-900 text-lg">Lago Billing Examples</span>
+          <Link href="/" className="flex items-center gap-6 hover:opacity-80 transition-opacity">
+            <Image src="/logo.svg" alt="Lago Logo" width={65} height={65} />
+            <span className="font-semibold text-gray-600 text-lg">Billing Examples</span>
           </Link>
 
           {/* Navigation Links */}
