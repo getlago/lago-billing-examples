@@ -2,6 +2,8 @@
 
 Interactive demos showcasing different billing models using [Lago's](https://getlago.com) JavaScript SDK. This Next.js application demonstrates real-time usage tracking and event-driven billing for modern SaaS applications.
 
+![Lago Billing Examples Header](./public/readme-header.png)
+
 ## 🎯 Features
 
 - **Pay-as-you-go** - Charge customers based on actual usage (API calls, compute resources)
