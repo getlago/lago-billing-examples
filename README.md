@@ -136,21 +136,7 @@ const response = await lagoClient.customers.findCustomerCurrentUsage(
 - **Framework**: Next.js 15.3.4 with App Router
 - **Language**: TypeScript 5
 - **Styling**: Tailwind CSS 4.1.11
-- **UI Components**: Shadcn
 - **Billing SDK**: Lago JavaScript Client 1.30.0
-- **JSON Viewer**: @uiw/react-json-view
-- **Icons**: Lucide React
-
-## 🔌 API Routes
-
-| Route | Method | Description |
-|-------|--------|-------------|
-| `/api/payg-usage` | POST | Send pay-as-you-go usage events |
-| `/api/txn-usage` | POST | Send per-transaction events |
-| `/api/hybrid-usage` | POST | Send hybrid billing events |
-| `/api/seat-usage` | POST | Send per-seat usage events |
-| `/api/token-usage` | POST | Send token consumption events |
-| `/api/cus-usage` | GET | Retrieve customer current usage |
 
 ## 🚀 Usage
 
@@ -158,36 +144,6 @@ const response = await lagoClient.customers.findCustomerCurrentUsage(
 2. **Explore billing models**: Click on any billing model card to see the interactive demo
 3. **Test usage events**: Adjust usage amounts and click "Send event" to see real-time billing
 4. **View responses**: Monitor event responses and customer usage data in the JSON viewers
-
-## 🎨 UI/UX Features
-
-- **Responsive design** with mobile-first approach
-- **Smooth animations** and hover effects
-- **Real-time data updates** with JSON visualization
-- **Modern glassmorphism navbar** with backdrop blur
-- **Clean card-based layout** for easy navigation
-- **Professional typography** and consistent spacing
-
-## 🔧 Environment Variables
-
-Create a `.env` file with the following variables:
-
-```env
-# Required: Your Lago API key
-LAGO_API_KEY=your_lago_api_key_here
-
-# Optional: Custom API base URL for self-hosted (defaults to Lago's production API)
-# LAGO_API_BASE_URL=https://api.getlago.com/api/v1
-```
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature-name`
-3. Make your changes and test thoroughly
-4. Commit with clear messages: `git commit -m "Add new billing model"`
-5. Push to your fork: `git push origin feature-name`
-6. Create a pull request
 
 ## 🐛 Troubleshooting
 
@@ -206,22 +162,14 @@ LAGO_API_KEY=your_lago_api_key_here
 - Run `npm install` to ensure all dependencies are installed
 - Check Node.js version (requires 18+)
 
-### Development Tips
-
-- Use `npm run dev` for hot reloading during development
-- Check browser console for detailed error messages
-- Monitor Network tab to debug API calls
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## 🔗 Links
 
 - [Lago Documentation](https://getlago.com/docs)
 - [Lago JavaScript SDK](https://github.com/getlago/lago-javascript-client)
-- [Next.js Documentation](https://nextjs.org/docs)
-- [Tailwind CSS](https://tailwindcss.com)
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
