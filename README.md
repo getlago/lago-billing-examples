@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./public/logo.svg" alt="Lago Logo" width="400">
+  <img src="./public/logo.svg" alt="Lago Logo" width="400" style="background-color: white;">
 </div>
 
 # Lago Billing Examples
