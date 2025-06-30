@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="./public/logo.svg" alt="Lago Logo" width="400">
+</div>
+
 # Lago Billing Examples
 
 Interactive demos showcasing different billing models using [Lago's](https://getlago.com) JavaScript SDK. This Next.js application demonstrates real-time usage tracking and event-driven billing for modern SaaS applications.
