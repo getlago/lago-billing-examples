@@ -54,31 +54,18 @@ Interactive demos showcasing different billing models using [Lago's](https://get
 ```
 src/
 ├── app/
-│   ├── (examples)/           # Billing model demo pages
-│   │   ├── pay-as-you-go/   # Usage-based billing demo
-│   │   ├── per-transaction/ # Transaction fee demo
-│   │   ├── hybrid/          # Combined billing models
-│   │   ├── per-seat/        # User-based pricing demo
-│   │   └── per-token/       # Token consumption demo
+│   ├── (examples)/          # Lago billing example pages
+│   │   ...       
 │   ├── api/
 │   │   ├── (events)/        # Lago event creation endpoints
-│   │   │   ├── payg-usage/  # Pay-as-you-go events
-│   │   │   ├── txn-usage/   # Transaction events
-│   │   │   ├── hybrid-usage/
-│   │   │   ├── seat-usage/
-│   │   │   └── token-usage/
-│   │   └── cus-usage/       # Customer usage retrieval endpoint
+│   │   │   ...
+│   │   └── cus-usage/       # Customer usage endpoint
 │   ├── globals.css
 │   ├── layout.tsx
 │   └── page.tsx
 ├── components/
 │   ├── ui/                  # Shadcn UI components
-│   │   ├── button.tsx
-│   │   ├── card.tsx
-│   │   ├── input.tsx
-│   │   ├── label.tsx
-│   │   └── tabs.tsx
-│   └── navbar.tsx           # Navigation header
+│   │   ...           
 └── lib/
     ├── lagoClient.ts        # Lago JS SDK client initialization
     ├── constants.ts         # Customer/subscription IDs
