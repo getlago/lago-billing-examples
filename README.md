@@ -118,13 +118,6 @@ const response = await lagoClient.customers.findCustomerCurrentUsage(
 );
 ```
 
-## 🛠 Technology Stack
-
-- **Framework**: Next.js 15.3.4 with App Router
-- **Language**: TypeScript 5
-- **Styling**: Tailwind CSS 4.1.11
-- **Billing SDK**: Lago JavaScript Client 1.30.0
-
 ## 🚀 Usage
 
 1. **Configure your Lago setup**: Update the constants in `src/lib/constants.ts` with your actual customer and subscription IDs
