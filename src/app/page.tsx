@@ -1,37 +1,48 @@
 import Link from "next/link";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 const billingExamples = [
   {
     title: "Pay-as-you-go",
-    description: "Charge customers based on their actual usage. Perfect for API calls, compute resources, or data processing.",
+    description:
+      "Charge customers based on their actual usage. Perfect for API calls, compute resources, or data processing.",
     href: "/pay-as-you-go",
-    icon: "💰"
+    icon: "💰",
   },
   {
     title: "Per-transaction",
-    description: "Charge a fixed fee for each transaction or operation. Ideal for payment processing or individual services.",
-    href: "/per-transaction", 
-    icon: "💳"
+    description:
+      "Charge a fixed fee for each transaction or operation. Ideal for payment processing or individual services.",
+    href: "/per-transaction",
+    icon: "💳",
   },
   {
     title: "Hybrid",
-    description: "Combine multiple billing models for complex pricing strategies. Mix usage, seats, and fixed fees.",
+    description:
+      "Combine multiple billing models for complex pricing strategies. Mix usage, seats, and fixed fees.",
     href: "/hybrid",
-    icon: "🔄"
+    icon: "🔄",
   },
   {
     title: "Per-seat",
-    description: "Charge based on the number of users or seats. Common for SaaS platforms and team collaboration tools.",
+    description:
+      "Charge based on the number of users or seats. Common for SaaS platforms and team collaboration tools.",
     href: "/per-seat",
-    icon: "👥"
+    icon: "👥",
   },
   {
     title: "Per-token",
-    description: "Charge based on token consumption. Perfect for AI services, language models, or credit-based systems.",
+    description:
+      "Charge based on token consumption. Perfect for AI services, language models, or credit-based systems.",
     href: "/per-token",
-    icon: "🎯"
-  }
+    icon: "🎯",
+  },
 ];
 
 export default function Home() {
@@ -43,7 +54,8 @@ export default function Home() {
           Lago Billing Examples
         </h1>
         <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-          Explore different billing models and pricing strategies with these interactive examples.
+          Explore different billing models and pricing strategies with these
+          interactive examples.
         </p>
       </div>
 

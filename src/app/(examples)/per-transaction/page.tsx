@@ -1,10 +1,9 @@
-'use client';
+"use client";
 
 import { useEffect, useState } from "react";
-import JsonView from '@uiw/react-json-view';
+import JsonView from "@uiw/react-json-view";
 import { Loader } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { getCurrentUsage } from "@/lib/utils";
 import { EXTERNAL_SUBSCRIPTION_ID } from "@/lib/constants";
@@ -19,12 +18,12 @@ export default function PerTransactionPage() {
   const handleClick = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch('/api/txn-usage', {
-          method: 'POST',
-          body: JSON.stringify({
-            amount,
-            external_subscription_id: EXTERNAL_SUBSCRIPTION_ID, // TODO: Replace with your own customer's subscription ID
-          }),
+      const response = await fetch("/api/txn-usage", {
+        method: "POST",
+        body: JSON.stringify({
+          amount,
+          external_subscription_id: EXTERNAL_SUBSCRIPTION_ID, // TODO: Replace with your own customer's subscription ID
+        }),
       });
       const data = await response.json();
       setEvent(data);
@@ -34,7 +33,6 @@ export default function PerTransactionPage() {
       setIsLoading(false);
     }
   };
-
 
   useEffect(() => {
     const fetchUsage = async () => {
@@ -47,9 +45,13 @@ export default function PerTransactionPage() {
 
   return (
     <main>
-      <h1 className="text-3xl font-bold text-gray-900 mb-2">Per-transaction Billing</h1>
-      <p className="text-gray-600 mb-6">This simulates transaction-based billing for SaaS applications.</p>
-      
+      <h1 className="text-3xl font-bold text-gray-900 mb-2">
+        Per-transaction Billing
+      </h1>
+      <p className="text-gray-600 mb-6">
+        This simulates transaction-based billing for SaaS applications.
+      </p>
+
       {/* Sample Transaction Input */}
       <Card className="max-w-sm mb-6">
         <CardHeader>
@@ -59,15 +61,15 @@ export default function PerTransactionPage() {
           <Input
             className="mb-2"
             type="number"
-            value={amount === 0 ? '' : amount}
+            value={amount === 0 ? "" : amount}
             onChange={(e) => setAmount(Number(e.target.value))}
           />
           <Button onClick={handleClick} disabled={isLoading || !amount}>
-            {isLoading ? <Loader className="animate-spin" /> : 'Send event'}
+            {isLoading ? <Loader className="animate-spin" /> : "Send event"}
           </Button>
         </CardContent>
       </Card>
-      
+
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         <Card>
           <CardHeader>
@@ -83,7 +85,7 @@ export default function PerTransactionPage() {
             )}
           </CardContent>
         </Card>
-        
+
         <Card>
           <CardHeader>
             <CardTitle>Customer Usage</CardTitle>

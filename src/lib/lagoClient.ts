@@ -1,4 +1,4 @@
-import { Client } from 'lago-javascript-client';
+import { Client } from "lago-javascript-client";
 
 const apiKey = process.env.LAGO_API_KEY!;
 

@@ -16,7 +16,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Lago Billing Examples",
-  description: "Coding examples per-token, per-seat, per-transaction, and more.",
+  description:
+    "Coding examples per-token, per-seat, per-transaction, and more.",
 };
 
 export default function RootLayout({
@@ -31,9 +32,7 @@ export default function RootLayout({
       >
         <Navbar />
 
-        <div className="container mx-auto px-4 mt-24">
-          {children}
-        </div>
+        <div className="container mx-auto px-4 mt-24">{children}</div>
 
         {/* Footer */}
         <div className="text-center border-t py-8 mt-16">
