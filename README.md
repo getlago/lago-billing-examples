@@ -19,12 +19,14 @@ Active [Lago](https://getlago.com) account with API access
 ## 📦 Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/getlago/lago-billing-examples.git
    cd lago-billing-examples
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    # or
@@ -35,11 +37,13 @@ Active [Lago](https://getlago.com) account with API access
 
 3. **Environment setup**
    Create a `.env` file in the root directory:
+
    ```env
    LAGO_API_KEY=your_lago_api_key_here
    ```
 
 4. **Start the development server**
+
    ```bash
    npm run dev
    ```
@@ -53,7 +57,7 @@ Active [Lago](https://getlago.com) account with API access
 src/
 ├── app/
 │   ├── (examples)/          # Lago billing example pages
-│   │   ...       
+│   │   ...
 │   ├── api/
 │   │   ├── (events)/        # Lago event creation endpoints
 │   │   │   ...
@@ -63,7 +67,7 @@ src/
 │   └── page.tsx
 ├── components/
 │   ├── ui/                  # Shadcn UI components
-│   │   ...           
+│   │   ...
 └── lib/
     ├── lagoClient.ts        # Lago JS SDK client initialization
     ├── constants.ts         # Customer/subscription IDs
@@ -73,9 +77,10 @@ src/
 ## 🔑 Key Code Snippets
 
 ### Lago Client Setup
+
 ```typescript
 // src/lib/lagoClient.ts
-import { Client } from 'lago-javascript-client';
+import { Client } from "lago-javascript-client";
 
 const apiKey = process.env.LAGO_API_KEY!;
 const lagoClient = Client(apiKey);
@@ -84,30 +89,32 @@ export default lagoClient;
 ```
 
 ### Creating Usage Events
+
 ```typescript
 // src/app/api/(events)/payg-usage/route.ts
-import lagoClient from '@/lib/lagoClient';
+import lagoClient from "@/lib/lagoClient";
 
 export async function POST(request: Request) {
   const body = await request.json();
-  
+
   const response = await lagoClient.events.createEvent({
     event: {
       transaction_id: crypto.randomUUID(),
       external_subscription_id: EXTERNAL_SUBSCRIPTION_ID,
-      code: '__BILLABLE_METRIC_CODE__', // Your billable metric code
+      code: "__BILLABLE_METRIC_CODE__", // Your billable metric code
       timestamp: Math.floor(Date.now() / 1000).toString(),
       properties: {
         // Insert trackable event properties (e.x. input or output tokens)
       },
     },
   });
-  
+
   return NextResponse.json(response.data);
 }
 ```
 
 ### Fetching Customer Usage
+
 ```typescript
 // src/app/api/cus-usage/route.ts
 const response = await lagoClient.customers.findCustomerCurrentUsage(
@@ -128,15 +135,18 @@ const response = await lagoClient.customers.findCustomerCurrentUsage(
 ### Common Issues
 
 **"Lago event failed" error**
+
 - Verify your `LAGO_API_KEY` is set correctly in `.env`
 - Check that your Lago account has API access enabled
 - Ensure customer and subscription IDs exist in your Lago instance
 
 **Usage data not loading**
+
 - Update `EXTERNAL_CUSTOMER_ID` and `EXTERNAL_SUBSCRIPTION_ID` in `src/lib/constants.ts`
 - Verify the subscription is active in your Lago dashboard
 
 **Build errors**
+
 - Run `npm install` to ensure all dependencies are installed
 - Check Node.js version (requires 18+)
 

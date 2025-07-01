@@ -1,5 +1,5 @@
-import { NextResponse } from 'next/server';
-import lagoClient from '@/lib/lagoClient';
+import { NextResponse } from "next/server";
+import lagoClient from "@/lib/lagoClient";
 
 export async function POST(request: Request) {
   const body = await request.json();
@@ -8,7 +8,10 @@ export async function POST(request: Request) {
   const external_subscription_id = body.external_subscription_id;
 
   if (!external_subscription_id) {
-    return NextResponse.json({ error: 'External subscription ID is required' }, { status: 400 });
+    return NextResponse.json(
+      { error: "External subscription ID is required" },
+      { status: 400 }
+    );
   }
 
   try {
@@ -16,11 +19,11 @@ export async function POST(request: Request) {
       event: {
         transaction_id: crypto.randomUUID(),
         external_subscription_id,
-        code: 'seats',
+        code: "seats",
         timestamp: Math.floor(Date.now() / 1000).toString(),
         properties: {
-            seat_id: seatId,
-            operation_type: operationType ?? "add" // default to add if not provided
+          seat_id: seatId,
+          operation_type: operationType ?? "add", // default to add if not provided
         },
       },
     });
@@ -28,6 +31,6 @@ export async function POST(request: Request) {
     return NextResponse.json(response.data);
   } catch (err) {
     console.error(err);
-    return NextResponse.json({ error: 'Lago event failed' }, { status: 500 });
+    return NextResponse.json({ error: "Lago event failed" }, { status: 500 });
   }
 }
